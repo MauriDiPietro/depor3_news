@@ -130,6 +130,12 @@ cron.schedule('0 18 * * 3,4,6', async () => {
   }
 });
 
+app.get('/', (req, res) => {
+  res.json({
+    status: 'OK'
+  })
+})
+
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, ()=>console.log(`Server ok en puerto ${PORT}`));
