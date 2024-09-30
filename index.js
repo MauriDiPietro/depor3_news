@@ -120,7 +120,7 @@ async function enviarMensaje(titulares) {
 // proceso();
 
 // Ejecutar la tarea los miércoles y sábados a las 18:00 horas
-cron.schedule('0 18 * * 3,5,6', async () => {
+cron.schedule('0 16 * * 3,4,5,6', async () => {
   console.log('Ejecutando tarea programada...');
   const titulares = await obtenerTitulares();
   if (titulares.length > 0) {
@@ -130,7 +130,7 @@ cron.schedule('0 18 * * 3,5,6', async () => {
   }
 });
 
-app.get('/', (req, res) => {
+app.get('/status', (req, res) => {
   res.json({
     status: 'OK'
   })
